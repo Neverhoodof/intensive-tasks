@@ -5,13 +5,22 @@ package com.walking.intensive.chapter1.task3;
  */
 public class Task3 {
     public static void main(String[] args) {
-        //Для собственных проверок можете делать любые изменения в этом методе
 
+        int year = 1636;
+
+        if (isLeap(year)) {
+            System.out.println(year + " - високосный год");
+        } else {
+            System.out.println(year + " - год невисокосный");
+        }
     }
 
     static boolean isLeap(int year) {
-        //Место для вашего кода
 
-        return false; // Заглушка. При реализации - удалить
+        if (year % 400 == 0) {
+            return true;
+        }
+
+        return year % 4 == 0 && year % 100 != 0;
     }
 }
