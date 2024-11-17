@@ -5,29 +5,37 @@ package com.walking.intensive.chapter1.task4;
  */
 public class Task4 {
     public static void main(String[] args) {
-//        Для собственных проверок можете делать любые изменения в этом методе
-        double a = 0;
-        double b = 0;
-        double c = 0;
+
+        double a = 2;
+        double b = -5;
+        double c = 2;
 
         System.out.println(solveQuadraticEquation(a, b, c));
-
     }
 
-    /**
-     * При формировании строки, корни уравнения должны указываться по возрастанию.
-     * <p>
-     * Примеры результирующей строки:
-     * <p>
-     * Количество решений: 2. Корни: -4;4
-     * <p>
-     * Количество решений: 1. Корень: 0
-     * <p>
-     * Количество решений: 0.
-     */
     static String solveQuadraticEquation(double a, double b, double c) {
-        //        Место для вашего кода
+        String textMessage = "Количество решений: ";
+        double discriminantValue = b * b - 4 * a * c;
 
-        return null; // Заглушка. При реализации - удалить
+        if (a == 0 && b == 0 && c == 0) {
+            return "Бесконечное количество решений";
+        } else if (a == 0 && b == 0 && c != 0) {
+            return "Решений нет";
+        } else if (a == 0 && b != 0) {
+            return "x = -c/b";
+        }
+
+        if (discriminantValue > 0) {
+            double firstValue = (-b - Math.sqrt(discriminantValue)) / (2 * a);
+            double secondValue = (-b + Math.sqrt(discriminantValue)) / (2 * a);
+            textMessage = textMessage + "2. Корни: " + firstValue + "; " + secondValue;
+        } else if (discriminantValue == 0) {
+            double firstValue = (-b - Math.sqrt(discriminantValue)) / (2 * a);
+            textMessage = textMessage + "1. Корень: " + firstValue;
+        } else {
+            textMessage = textMessage + "0.";
+        }
+
+        return textMessage;
     }
 }
