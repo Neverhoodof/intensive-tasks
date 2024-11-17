@@ -12,8 +12,18 @@ public class Task1 {
     }
 
     static String getAgeString(int age) {
-//        Место для вашего кода
+        String textMessage = "Вам " + age;
 
-        return null; // Заглушка. При реализации - удалить
+        if (age <= 0) {
+            textMessage = "Вам нет и годика!";
+        } else if (age % 100 > 10 && age % 100 < 15) {
+            textMessage = textMessage + " лет";
+        } else if (age % 10 > 1 && age % 10 < 5) {
+            textMessage = textMessage + " года";
+        } else if (age % 10 == 1) {
+            textMessage = textMessage + " год";
+        } else textMessage = textMessage + " лет";
+
+        return textMessage;
     }
 }
