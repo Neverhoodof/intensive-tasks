@@ -41,7 +41,6 @@ public class Task2 {
             case (0):
                 textMessage = textMessage + "справа от лифта, вправо";
                 break;
-
         }
 
         return textMessage;
