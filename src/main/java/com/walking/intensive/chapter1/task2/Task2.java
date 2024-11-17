@@ -29,18 +29,10 @@ public class Task2 {
         textMessage = textMessage + flatEntrance + " подъезд, " + flatFloor + " этаж, ";
 
         switch (flatCorner) {
-            case (1):
-                textMessage = textMessage + "слева от лифта, влево";
-                break;
-            case (2):
-                textMessage = textMessage + "слева от лифта, вправо";
-                break;
-            case (3):
-                textMessage = textMessage + "справа от лифта, влево";
-                break;
-            case (0):
-                textMessage = textMessage + "справа от лифта, вправо";
-                break;
+            case (1) -> textMessage = textMessage + "слева от лифта, влево";
+            case (2) -> textMessage = textMessage + "слева от лифта, вправо";
+            case (3) -> textMessage = textMessage + "справа от лифта, влево";
+            case (0) -> textMessage = textMessage + "справа от лифта, вправо";
         }
 
         return textMessage;
